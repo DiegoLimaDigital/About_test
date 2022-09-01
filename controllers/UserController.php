@@ -17,6 +17,16 @@ switch ($accion) {
         print_r($lista);
         break;
 
+    case 'registrar_usuario':
+        $nombre = $_POST["nombre"];
+        $apellidos = $_POST["apellidos"];
+        $correo = $_POST["correo"];
+        $usuario = $_POST["usuario"];
+        $clave = $_POST["clave"];
+        $mensaje = $servicio->add($nombre, $apellidos, $correo, $usuario, $clave);
+        echo $mensaje;
+        break;
+
     default:
         
         break;
