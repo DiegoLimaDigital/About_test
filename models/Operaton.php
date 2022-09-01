@@ -3,8 +3,6 @@ require_once("Conecction.php");
 
 class  Operation
 {
-
-
 	private $ConsultaID;
 	function __construct()
 	{
@@ -54,10 +52,6 @@ class  Operation
 		}
 		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
 		return $List;
-	}
-
-	function agregar($sql){
-		echo "agregando";
 	}
 
 	function getCampos()

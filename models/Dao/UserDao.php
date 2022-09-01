@@ -13,15 +13,10 @@ class UserDao{
     }
 
     public function getList(){
-        $sql="select * from user";
+        $sql="select * from usuarios";
         return $this->operation->listar($sql);
     }
     
-    public function addUser(User $user){
-        $nombre = $user->getName();
-        $sql = "insert into user(nombre) values('$nombre')";
-        return $this->operation->agregar($sql);
-    }
 }
 
 ?>

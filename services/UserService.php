@@ -10,8 +10,4 @@ class UserService{
     public function list(){
         return $this->dao->getList();
     }
-
-    public function add(){
-        return $this->dao->addUser();
-    }
 }

@@ -9,7 +9,8 @@
 <body>
     <form action="controllers/UserController.php" method="POST">
         <input type="submit" name="accion" value="listar">
-        <input type="submit" name="accion" value="agregar">
+
+        <input type="submit" name="accion" value="listar_titulos">
     </form>
 </body>
 

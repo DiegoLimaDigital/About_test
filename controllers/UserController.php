@@ -1,19 +1,20 @@
 <?php
 // require_once(__DIR__."../services/UserService.php");
 require "../services/UserService.php";
+require "../services/UserMainService.php";
 
 $accion=$_POST['accion'];
 $servicio= new UserService();
-session_start();
+$servicio_usermain = new UserMainService();
 switch ($accion) {
     case 'listar':
         $lista = $servicio->list();
         print_r($lista);
         break;
 
-    case 'agregar':
-        echo "agregando dentro de switch";
-        return $servicio->add();
+    case 'listar_titulos':
+        $lista = $servicio_usermain->list();
+        print_r($lista);
         break;
 
     default:
