@@ -15,7 +15,7 @@
         $users=$userDao->getList(); //llamar a la clase que tiene a la funcion listar
         foreach($users as $user){ //recorrer el arreglo
           //  new User
-           echo $user["name"]."<br>"; //mostrar el nombre
+           echo $user["id"]." ".$user["name"]."<br>"; //mostrar el nombre
          }
         echo "<script>console.log('" . json_encode($users) . "');</script>"; //mostrar el nombre en consola
       ?>
