@@ -1,5 +1,6 @@
 <?php
 require_once("Conecction.php");
+
 class  Operation
 {
 
@@ -14,13 +15,13 @@ class  Operation
 		//		$ConexionID=$conexion->conexion("limadigi_erp","perudigital.net.pe","limadigital","hGQnS4g_ZTJf9PVk");
 		//		mysqli_close($conexion->conexion("erp_agencialimadigital","localhost","root",""));
 
-		$ConexionID = $conexion->conexion("agenciaerp", "localhost", "root", "");
+		$ConexionID = $conexion->conexion("bdportafolio", "localhost", "root", "");
 		if ($sql == "") {
 			$this->Error = "Error sentencia sql";
 			return "error de sentencia";
 		}
 		$this->ConsultaID = mysqli_query($ConexionID, $sql);
-		mysqli_close($conexion->conexion("agenciaerp", "localhost", "root", ""));
+		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
 		if (!$this->ConsultaID) {
 			$this->Errono = mysqli_errno($ConexionID);
 			$this->Error = mysqli_error($ConexionID);
@@ -36,7 +37,7 @@ class  Operation
 	function listar($sql)
 	{
 		$conexion = new Conecction();
-		$ConexionID = $conexion->conexion("agenciaerp", "localhost", "root", "");
+		$ConexionID = $conexion->conexion("bdportafolio", "localhost", "root", "");
 		$List = array();
 		$this->ConsultaID = mysqli_query($ConexionID, $sql);
 		$j = 0;
@@ -45,16 +46,18 @@ class  Operation
 			return "Operacion fallida";
 		}
 
-
 		while ($row = mysqli_fetch_assoc($this->ConsultaID)) {
-
 			foreach ($row as $key => $value) {
 				$this->array_push_assoc($assciativo, array($key => $value));
 			}
 			array_push($List, $assciativo);
 		}
-		mysqli_close($conexion->conexion("agenciaerp", "localhost", "root", ""));
+		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
 		return $List;
+	}
+
+	function agregar($sql){
+		echo "agregando";
 	}
 
 	function getCampos()
@@ -79,14 +82,16 @@ class  Operation
 		for ($i = 0; $i < $this->getCampos(); $i++) {
 			echo "<td><b>" . $this->getNameCampo($i) . "</b></td>";
 		}
+
 		echo "</tr>\n";
-		while ($row = mysqli_fetch_array($this->ConsultaID)) {
+		while ($row2 = mysqli_fetch_array($this->ConsultaID)) {
 			echo "<tr>\n";
 
 			for ($i = 0; $i < $this->getCampos(); $i++) {
-				echo "<td>" . $row[$i] . "</td>\n";
+				echo "<td>" . $row2[$i] . "</td>\n";
 			}
 			echo "</tr>";
 		}
+		echo "</table>\n";
 	}
 }
