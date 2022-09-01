@@ -1,27 +1,28 @@
 <?php
 class User{
-    private $name;
-    private function __construct($name)
+    private $nombre;
+    private function __construct($nombre)
     {
-        $this->name=$name;
+        $this->nombre=$nombre;
     }
 
+
     /**
-     * Get the value of name
+     * Get the value of nombre
      */ 
-    public function getName()
+    public function getNombre()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
     /**
-     * Set the value of name
+     * Set the value of nombre
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setNombre($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
 
         return $this;
     }

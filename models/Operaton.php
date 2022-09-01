@@ -57,41 +57,22 @@ class  Operation
 		return $List;
 	}
 
-	function agregar($sql)
+	function login($sql)
 	{
 		$conexion = new Conecction();
 		$ConexionID = $conexion->conexion("bdportafolio", "localhost", "root", "");
-		$this->ConsultaID = mysqli_query($ConexionID, $sql);
-		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
-		if (!$this->ConsultaID) {
-			return "Operacion fallida";
-		}
-		return "Operacion Exitosa";
-	}
-
-	function modificar($sql)
-	{
-		$conexion = new Conecction();
-		$ConexionID = $conexion->conexion("bdportafolio", "localhost", "root", "");
-		$this->ConsultaID = mysqli_query($ConexionID, $sql);
-		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
-		if (!$this->ConsultaID) {
-			return "Operacion fallida";
-		}
-		return "Operacion Exitosa";
-	}
-
-	function eliminar($sql)
-	{
-		$conexion = new Conecction();
-		$ConexionID = $conexion->conexion("bdportafolio", "localhost", "root", "");
-		$this->ConsultaID = mysqli_query($ConexionID, $sql);
-		mysqli_close($conexion->conexion("bdportafolio", "localhost", "root", ""));
-		if (!$this->ConsultaID) {
-			return "Operacion fallida";
-		}
-		return "Operacion Exitosa";
-	}
+		// $List = array();
+		// $this->ConsultaID = mysqli_query($ConexionID, $sql);
+		// $j = 0;
+		// $assciativo = array();
+		// if (!$this->ConsultaID) {
+		// 	return "Operacion fallida";
+		// }
+		$respuesta = mysqli_query($ConexionID, $sql);
+		$row = mysqli_fetch_assoc($respuesta);
+		echo "<script>console.log('" . json_encode($row) . "');</script>";
+		return $row;
+	}	
 	
 	function getCampos()
 	{
