@@ -1,28 +1,67 @@
 <?php
 class User{
-    private $name;
-    private function __construct($name)
+    private $nombre;
+    private $apellidos;
+    private $correo;
+    private $usuario;
+    private $clave;
+
+    private function __construct($nombre,$apellidos,$correo,$usuario,$clave)
     {
-        $this->name=$name;
+        $this->nombre=$nombre;
+        $this->apellidos=$apellidos;
+        $this->correo=$correo;
+        $this->usuario=$usuario;
+        $this->clave=$clave;
     }
 
-    /**
-     * Get the value of name
-     */ 
-    public function getName()
+    public function getNombre()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
-    public function setName($name)
+    public function setNombre($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
+    }
 
-        return $this;
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+    }
+
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+    }
+
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+    }
+
+    public function getClave()
+    {
+        return $this->clave;
+    }
+
+    public function setClave($clave)
+    {
+        $this->clave = $clave;
     }
 }
