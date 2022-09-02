@@ -19,14 +19,30 @@ switch ($accion) {
         break;
 
     case 'registrar_usuario':
-        $nombre = $_POST["nombre"];
-        $apellidos = $_POST["apellidos"];
-        $correo = $_POST["correo"];
-        $usuario = $_POST["usuario"];
-        $clave = $_POST["clave"];
-        $mensaje = $servicio->add($nombre, $apellidos, $correo, $usuario, $clave);
-        echo $mensaje;
+        if(!empty($_POST["nombre"]) && !empty($_POST["apellidos"]) && !empty($_POST["correo"]) && !empty($_POST["usuario"]) && !empty($_POST["clave"])){
+            $nombre = $_POST["nombre"];
+            $apellidos = $_POST["apellidos"];
+            $correo = $_POST["correo"];
+            $usuario = $_POST["usuario"];
+            $clave = $_POST["clave"];
+            $mensaje = $servicio->add($nombre, $apellidos, $correo, $usuario, $clave);
+            echo $mensaje;
+        } else {
+            echo "debe llenar el formulario";
+        }
+        
         break;
+
+    case 'eliminar_usuario':
+        if(!empty($_POST["id_eliminar"])){
+            $id = $_POST["id_eliminar"];
+            $mensaje = $servicio->delete($id);
+            echo $mensaje;
+        } else {
+            echo "Debe ingresar un id";
+        }  
+        break;
+
     default:
         break;
 }

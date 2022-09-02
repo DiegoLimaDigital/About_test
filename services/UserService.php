@@ -18,4 +18,8 @@ class UserService{
         return $this->dao->addUser($nombre, $apellidos, $correo, $usuario, $clave);
     }
 
+    public function delete($id){
+        return $this->dao->deleteUser($id);
+    }
+
 }

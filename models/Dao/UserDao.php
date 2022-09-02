@@ -25,6 +25,12 @@ class UserDao{
 
         return $this->operation->ejecutar($sql);
     }
+
+    public function deleteUser($id){
+        $sql = "delete from usuarios where id='$id'";
+
+        return $this->operation->ejecutar($sql);
+    }
     
 }
 
