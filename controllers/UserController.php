@@ -7,14 +7,16 @@ $accion=$_POST['accion'];
 $servicio= new UserService();
 $servicio_usermain = new UserMainService();
 switch ($accion) {
-    case 'listar':
+
+    case 'listar_usuarios':
         $lista = $servicio->list();
-        print_r($lista);
+        echo '<pre>'; print_r($lista); echo '</pre>';
+
         break;
 
     case 'listar_titulos':
         $lista = $servicio_usermain->list();
-        print_r($lista);
+        echo '<pre>'; print_r($lista); echo '</pre>';
         break;
 
     case 'registrar_usuario':
@@ -26,8 +28,6 @@ switch ($accion) {
         $mensaje = $servicio->add($nombre, $apellidos, $correo, $usuario, $clave);
         echo $mensaje;
         break;
-
     default:
-        
         break;
 }
