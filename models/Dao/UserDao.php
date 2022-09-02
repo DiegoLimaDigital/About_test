@@ -22,7 +22,16 @@ class UserDao{
 
         return $this->operation->ejecutar($sql);
     }
-    
+    public function editUser($nombre, $apellidos, $correo, $usuario, $clave, $id){
+        $sql = "update usuarios set nombre='$nombre',apellidos='$apellidos',correo='$correo',usuario='$usuario',clave='$clave' where id='$id';";
+
+        return $this->operation->ejecutar($sql);
+    }
+    public function deleteuser($id){
+        $sql = "delete from usuarios where id=$id";
+
+        return $this->operation->ejecutar($sql);
+    }
 }
 
 ?>
