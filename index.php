@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>  
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+</head>    
 <body>
+    
+      <form action="controllers/LoginController.php" method="post">
+        <input type="text" name="txtusuario" id="usuario">
+        <input type="text" name="txtclave" id="clave">
+        <input type="submit" name="accion" value="login">
+      </form>
+    
+
 
     <form action="controllers/UserController.php" method="POST">
         <input type="submit" name="accion" value="listar_usuarios">
@@ -19,7 +27,16 @@
         <input type="text" name="usuario" placeholder="Ingresar usuario">
         <input type="password" name="clave" placeholder="Ingresar clave">
         <input type="submit" name="accion" value="registrar_usuario">
+
+        <h3>Editar usuario</h3>
+        <input type="text" name="id_editar" placeholder="Ingrese id del usuario a editar">
+        <input type="submit" name="accion" value ="buscar_usuario">
+
+        <h3>Eliminar usuario</h3>
+        <input type="text" name="id_eliminar" placeholder="Ingrese id del usuario a eliminar">
+        <input type="submit" name="accion" value ="eliminar_usuario">
     </form>
+
 </body>
 
 </html>

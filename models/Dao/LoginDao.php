@@ -17,5 +17,10 @@ class LoginDao{
         return $this->operation->login($sql); //retorna el resultado de la consulta
     }
 
+    // public function logOut(){
+    //     session_start();
+    //     session_destroy();
+    // }
+
 }
 

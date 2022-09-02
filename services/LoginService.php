@@ -5,7 +5,11 @@ class LoginService{
     public function __construct(){
         $this->dao=new LoginDao();
     }
-    public function login($usuario,$clave){
+    public function login($usuario,$clave){   
         return $this->dao->logIn($usuario,$clave);
     }
+    // public function logout(){
+    //     return $this->dao->logOut();
+    // }
+
 }
