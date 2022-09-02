@@ -13,9 +13,16 @@ class UserService{
         return $this->dao->getList();
     }
 
+    public function get($id){
+        return $this->dao->getUser($id);
+    }
 
     public function add($nombre, $apellidos, $correo, $usuario, $clave){
         return $this->dao->addUser($nombre, $apellidos, $correo, $usuario, $clave);
+    }
+
+    public function edit($id, $nombre, $apellidos, $correo, $usuario, $clave){
+        return $this->dao->editUser($id, $nombre, $apellidos, $correo, $usuario, $clave);
     }
 
     public function delete($id){

@@ -20,6 +20,10 @@
         <input type="password" name="clave" placeholder="Ingresar clave">
         <input type="submit" name="accion" value="registrar_usuario">
 
+        <h3>Editar usuario</h3>
+        <input type="text" name="id_editar" placeholder="Ingrese id del usuario a editar">
+        <input type="submit" name="accion" value ="buscar_usuario">
+
         <h3>Eliminar usuario</h3>
         <input type="text" name="id_eliminar" placeholder="Ingrese id del usuario a eliminar">
         <input type="submit" name="accion" value ="eliminar_usuario">
