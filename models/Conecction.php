@@ -15,15 +15,8 @@ class Conecction{
         if($host!="") $this->Servidor=$host;
         if($user!="") $this->usuario=$user;
         if($pass!="") $this->password=$pass;
-        
         $this->ConexionId=mysqli_connect($this->Servidor,$this->usuario,$this->password,$this->BaseDatos);
-       
-        
         return $this->ConexionId;
     }
-    
-    
- 
-  
 
 }

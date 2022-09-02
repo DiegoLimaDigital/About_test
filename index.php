@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <form action="controllers/UserController.php" method="POST">
         <input type="submit" name="accion" value="listar_usuarios">
         <input type="submit" name="accion" value="listar_titulos">
@@ -22,3 +23,4 @@
 </body>
 
 </html>
+
