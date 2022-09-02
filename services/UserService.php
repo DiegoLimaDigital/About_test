@@ -1,21 +1,21 @@
 <?php
-require_once(__DIR__."../models/Dao/UserDao.php");
+// require_once(__DIR__."../models/Dao/UserDao.php");
+require "../models/Dao/UserDao.php";
 class UserService{
     private $dao;
-    public function __construct(){ 
-        $dao=new UserDao();
+
+    public function __construct(){
+        $this->dao=new UserDao();
+
     }
 
     public function list(){
         return $this->dao->getList();
     }
-    public function add(){
-        return $this->dao->addUser();
+
+
+    public function add($nombre, $apellidos, $correo, $usuario, $clave){
+        return $this->dao->addUser($nombre, $apellidos, $correo, $usuario, $clave);
     }
-    public function update(){
-        return $this->dao->updateUser();
-    }
-    public function delete(){
-        return $this->dao->deleteUser();
-    }    
+
 }
