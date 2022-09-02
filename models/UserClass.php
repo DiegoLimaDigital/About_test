@@ -1,6 +1,7 @@
 <?php
 class User{
     private $nombre;
+
     private $apellidos;
     private $correo;
     private $usuario;
@@ -59,6 +60,7 @@ class User{
     {
         return $this->clave;
     }
+
 
     public function setClave($clave)
     {

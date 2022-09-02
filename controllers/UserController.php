@@ -7,7 +7,6 @@ $accion=$_POST['accion'];
 $servicio= new UserService();
 $servicio_usermain = new UserMainService();
 switch ($accion) {
-
     case 'listar_usuarios':
         $lista = $servicio->list();
         echo '<pre>'; print_r($lista); echo '</pre>';
