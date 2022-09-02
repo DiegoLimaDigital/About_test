@@ -20,10 +20,7 @@ class Conecction{
        
         
         return $this->ConexionId; //retorna la conexion
+
     }
-    
-    
- 
-  
 
 }
