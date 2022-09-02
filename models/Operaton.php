@@ -72,7 +72,7 @@ class  Operation
 		$row = mysqli_fetch_assoc($respuesta);
 		echo "<script>console.log('" . json_encode($row) . "');</script>";
 		return $row;
-	}	
+	}
 	
 	function getCampos()
 	{
