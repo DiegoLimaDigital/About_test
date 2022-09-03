@@ -10,7 +10,7 @@ class UserMainDao {
     }
 
     public function getUserTitles(){
-        $sql = "SELECT U.nombre,U.apellidos,M.titulo FROM usuarios U JOIN usuariosmain UM ON U.id=UM.idusuario JOIN main M ON M.id=UM.idmain";
+        $sql = "SELECT titulo FROM main";
 
         return $this->operation->listar($sql);
     }
