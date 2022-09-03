@@ -10,7 +10,7 @@
     
       <form action="controllers/LoginController.php" method="post">
         <input type="text" name="txtusuario" id="usuario">
-        <input type="text" name="txtclave" id="clave">
+        <input type="password" name="txtclave" id="clave">
         <input type="submit" name="accion" value="login">
       </form>
     
@@ -35,6 +35,7 @@
         <h3>Eliminar usuario</h3>
         <input type="text" name="id_eliminar" placeholder="Ingrese id del usuario a eliminar">
         <input type="submit" name="accion" value ="eliminar_usuario">
+        
     </form>
 
 </body>

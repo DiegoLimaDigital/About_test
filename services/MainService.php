@@ -10,6 +10,10 @@ class MainService{
         return $this->dao->getList();
     }
 
+    public function get($id){
+        return $this->dao->getMain($id);
+    }
+    
     public function add($titulo, $cuerpo, $footer){
         return $this->dao->addMain($titulo, $cuerpo, $footer);
     }
@@ -21,6 +25,7 @@ class MainService{
     public function delete($id){
         return $this->dao->deleteMain($id);
     }
+    
 }
 
 $prueba =new MainService();

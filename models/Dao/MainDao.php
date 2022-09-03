@@ -15,6 +15,11 @@ class MainDao{
         return $this->operation->listar($sql);
     }
 
+    public function getMain($id){
+        $sql = "select * from main where id='$id'";
+        return $this->operation->listar($sql);
+    }
+
     public function addMain($titulo, $cuerpo, $footer){
         $sql = "insert into main(titulo,cuerpo,footer) values('$titulo','$cuerpo','$footer')";
 
