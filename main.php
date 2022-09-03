@@ -3,7 +3,7 @@
     if (empty($_SESSION['usuario'])) {
         header("Location: index.php");
     }
-    echo $_SESSION['usuario']['nombre'];
+    $nombre = $_SESSION['usuario']['nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +16,12 @@
 </head>
 <body>
     
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido <?php if(isset($_SESSION['usuario']['clave'])){echo $nombre;}?></h1>
     <form action="controllers/LoginController.php" method="post">
     <input type="submit" name="accion" value="logout">
     </form>
+
+    <br>
 
     <form action="controllers/MainController.php" method="POST">
         <input type="submit" name="accion" value="listar_main">
@@ -37,8 +39,6 @@
     <h3>Eliminar Main</h3>
     <input type="text" name="txtid" placeholder="Ingresar id a eliminar">
     <input type="submit" name="accion" value="eliminar_main">
-    
     </form>
-
 </body>
 </html>

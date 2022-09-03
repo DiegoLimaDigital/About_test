@@ -2,6 +2,7 @@
 // require_once(__DIR__."../services/UserService.php");
 //require "../services/MainService.php";
 require "../services/MainService.php";
+session_start();
 
 $accion=$_POST['accion'];
 $servicio_main = new MainService();
@@ -16,7 +17,8 @@ switch ($accion) {
         $titulo = $_POST["txttitulo"];
         $cuerpo = $_POST["txtcuerpo"];
         $footer = $_POST["txtfooter"];
-        $mensaje = $servicio_main->add($titulo, $cuerpo, $footer);
+        $id_usuario = $_SESSION["usuario"]["id"];
+        $mensaje = $servicio_main->add($titulo, $cuerpo, $footer, $id_usuario);
         echo $mensaje;
         break;
     
@@ -38,7 +40,7 @@ switch ($accion) {
 
             header("Location: ../edit_main.php?id=$id_obtenido&titulo=$titulo&cuerpo=$cuerpo&footer=$footer");
                 } else {
-                    echo "No existe un usuario con ese id";
+                    echo "No existe un main con ese id";
                 }
                 } else {
                      echo "Debe ingresar un id";
