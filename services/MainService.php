@@ -14,8 +14,8 @@ class MainService{
         return $this->dao->getMain($id);
     }
     
-    public function add($titulo, $cuerpo, $footer){
-        return $this->dao->addMain($titulo, $cuerpo, $footer);
+    public function add($titulo, $cuerpo, $footer, $id_usuario){
+        return $this->dao->addMain($titulo, $cuerpo, $footer, $id_usuario);
     }
 
     public function edit($titulo, $cuerpo, $footer, $id){

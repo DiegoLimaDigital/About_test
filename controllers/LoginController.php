@@ -17,9 +17,6 @@ switch ($accion) {
             $_SESSION['usuario'] = $resultado;
             header("Location: ../main.php");
         }
-
-
-
         break;
 
 

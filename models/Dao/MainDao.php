@@ -11,7 +11,7 @@ class MainDao{
     }
 
     public function getList(){
-        $sql="select * from main";
+        $sql = "SELECT M.titulo,M.cuerpo,M.footer,CONCAT(U.nombre,' ',U.apellidos) AS autor FROM usuarios U JOIN MAIN m ON U.id=M.id_usuario";
         return $this->operation->listar($sql);
     }
 
@@ -20,8 +20,8 @@ class MainDao{
         return $this->operation->listar($sql);
     }
 
-    public function addMain($titulo, $cuerpo, $footer){
-        $sql = "insert into main(titulo,cuerpo,footer) values('$titulo','$cuerpo','$footer')";
+    public function addMain($titulo, $cuerpo, $footer, $id_usuario){
+        $sql = "insert into main(titulo,cuerpo,footer,id_usuario) values('$titulo','$cuerpo','$footer','$id_usuario')";
 
         return $this->operation->ejecutar($sql);
     }

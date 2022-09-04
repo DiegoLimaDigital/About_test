@@ -8,13 +8,13 @@
 </head>    
 <body>
     
-      <form action="controllers/LoginController.php" method="post">
+    <form action="controllers/LoginController.php" method="post">
         <input type="text" name="txtusuario" id="usuario">
         <input type="password" name="txtclave" id="clave">
         <input type="submit" name="accion" value="login">
-      </form>
+    </form>
     
-
+    <br>
 
     <form action="controllers/UserController.php" method="POST">
         <input type="submit" name="accion" value="listar_usuarios">
